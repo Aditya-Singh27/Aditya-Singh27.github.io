@@ -1,4 +1,3 @@
-//http://api.weatherapi.com/v1/current.json?key=f77ec1762b9c4c5983962114260302&q=London&aqi=yes
 const button = document.getElementById("search")
 const input = document.getElementById("input")
 
@@ -8,7 +7,7 @@ const cityTemp = document.getElementById("city-temp")
 
 async function getData(cityName) {
     const promise = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=f77ec1762b9c4c5983962114260302&q=${cityName}&aqi=yes`
+        `https://api.weatherapi.com/v1/current.json?key=f77ec1762b9c4c5983962114260302&q=${cityName}&aqi=yes`
     )
     return await promise.json()
 }
@@ -29,7 +28,7 @@ button.addEventListener("click" , async () =>{
 
 async function exactLocation(latitude , longitude) {
         const promise = await fetch(
-            `http://api.weatherapi.com/v1/current.json?key=f77ec1762b9c4c5983962114260302&q=${latitude},${longitude}&aqi=yes`
+            `https://api.weatherapi.com/v1/current.json?key=f77ec1762b9c4c5983962114260302&q=${latitude},${longitude}&aqi=yes`
         )
         return await promise.json()
     }
